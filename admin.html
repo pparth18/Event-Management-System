@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+
+<style>
+body{
+font-family:Arial;
+margin:0;
+background:#eef2f7;
+}
+
+header{
+background:#1e3a8a;
+color:white;
+padding:15px;
+text-align:center;
+font-size:22px;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+background:#f0f9ff;
+}
+
+.card h3{
+margin:0;
+}
+
+.list{
+margin-top:15px;
+display:none;
+animation:fadeIn 0.4s ease;
+}
+
+.list li{
+padding:6px 0;
+border-bottom:1px solid #ddd;
+}
+
+.list b{
+display:block;
+margin-top:10px;
+color:#1e3a8a;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(10px)}
+to{opacity:1;transform:translateY(0)}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>Admin Dashboard</header>
+
+<div class="container">
+
+<div class="card" onclick="openCard('events')">
+<h3>All Events</h3>
+<ul id="events" class="list">
+<li>Tech Fest 2026</li>
+<li>Singing Competition</li>
+<li>Dancing Competition</li>
+<li>Drama Competition</li>
+<li>Drawing Competition</li>
+</ul>
+</div>
+
+<div class="card" onclick="openCard('students')">
+<h3>Registered Students</h3>
+
+<div id="students" class="list">
+
+<b>Computer Engineering</b>
+<ul>
+<li>John Patel</li>
+<li>Riya Shah</li>
+<li>Aman Verma</li>
+</ul>
+
+<b>Mechanical Engineering</b>
+<ul>
+<li>Rahul Mehta</li>
+<li>Priya Singh</li>
+</ul>
+
+<b>Electrical Engineering</b>
+<ul>
+<li>Neha Joshi</li>
+<li>Vikas Kumar</li>
+</ul>
+
+<b>Civil Engineering</b>
+<ul>
+<li>Kunal Desai</li>
+<li>Pooja Patel</li>
+</ul>
+
+</div>
+</div>
+
+<div class="card" onclick="openCard('organizers')">
+<h3>Organizers</h3>
+<ul id="organizers" class="list">
+<li>Tech Club</li>
+<li>Cultural Team</li>
+<li>Sports Committee</li>
+</ul>
+</div>
+
+<div class="card" onclick="openCard('reports')">
+<h3>Reports</h3>
+<ul id="reports" class="list">
+<li>Attendance Report</li>
+<li>Event Participation</li>
+<li>Certificate Records</li>
+</ul>
+</div>
+
+</div>
+
+<script>
+function openCard(id){
+
+// close all lists first
+let lists = document.querySelectorAll(".list");
+lists.forEach(list => list.style.display="none");
+
+// open selected list
+let selected = document.getElementById(id);
+selected.style.display="block";
+}
+</script>
+
+</body>
+</html>

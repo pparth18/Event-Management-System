@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Dashboard</title>
+
+<style>
+body{
+font-family:Arial;
+margin:0;
+background:#eef2f7;
+}
+
+header{
+background:#1e3a8a;
+color:white;
+padding:15px;
+text-align:center;
+font-size:22px;
+}
+
+/* BUTTON MENU */
+.menu{
+text-align:center;
+padding:20px;
+}
+
+.menu button{
+padding:20px 40px;
+margin:16px;
+font-size:20px;
+border:none;
+border-radius:19px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.menu button:hover{
+background:#1e40af;
+transform:scale(1.1);
+}
+
+/* PANELS */
+.panel{
+width:70%;
+margin:20px auto;
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+display:none;
+animation:fadeIn 0.5s ease;
+}
+
+.event-row{
+display:flex;
+justify-content:space-between;
+padding:10px;
+border-bottom:1px solid #ddd;
+}
+
+.small-btn{
+padding:6px 12px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.small-btn:hover{
+background:#1e40af;
+}
+
+/* animation */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>Student Dashboard</header>
+
+<div class="menu">
+<button onclick="showPanel('events')">Upcoming Events</button>
+<button onclick="showPanel('registrations')">My Registrations</button>
+<button onclick="showPanel('certificates')">Certificates</button>
+<button onclick="showPanel('notifications')">Notifications</button>
+<button onclick="showPanel('profile')">Profile</button>
+</div>
+
+<!-- Upcoming Events -->
+<div id="events" class="panel">
+<h3>Upcoming Events</h3>
+
+<div class="event-row">
+<span>Tech Fest 2026</span>
+<button class="small-btn">Register</button>
+</div>
+
+<div class="event-row">
+<span>Singing Competition</span>
+<button class="small-btn">Register</button>
+</div>
+
+<div class="event-row">
+<span>Dancing Competition</span>
+<button class="small-btn">Register</button>
+</div>
+
+<div class="event-row">
+<span>Drama Competition</span>
+<button class="small-btn">Register</button>
+</div>
+
+<div class="event-row">
+<span>Drawing Competition</span>
+<button class="small-btn">Register</button>
+</div>
+</div>
+
+<!-- Registrations -->
+<div id="registrations" class="panel">
+<h3>My Registrations</h3>
+<p>You are registered for:</p>
+<ul>
+<li>Tech Fest 2026</li>
+<li>Singing Competition</li>
+</ul>
+</div>
+
+<!-- Certificates -->
+<div id="certificates" class="panel">
+<h3>Certificates</h3>
+<p>No certificates.</p>
+</div>
+
+<!-- Notifications -->
+<div id="notifications" class="panel">
+<h3>Notifications</h3>
+<ul>
+<li>Tech Fest schedule updated</li>
+<li>Dance competition venue changed</li>
+</ul>
+</div>
+
+<!-- Profile -->
+<div id="profile" class="panel">
+<h3>Student Profile</h3>
+<p>Name: Student</p>
+<p>ID: ST123</p>
+<p>Department: Computer Engineering</p>
+</div>
+
+<script>
+function showPanel(id){
+let panels = document.querySelectorAll(".panel");
+panels.forEach(p => p.style.display="none");
+document.getElementById(id).style.display="block";
+}
+</script>
+
+</body>
+</html>

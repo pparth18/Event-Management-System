@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#1e3a8a,#2563eb,#0ea5e9,#1e40af);
+    background-size:400% 400%;
+    animation:bgMove 8s infinite alternate;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    100%{background-position:100% 50%}
+}
+
+.card{
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.15);
+    padding:30px;
+    border-radius:15px;
+    width:320px;
+    color:white;
+    animation:fadeIn 1s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:none;
+    border-radius:6px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    background:white;
+    color:#1e3a8a;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    background:#e0e7ff;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h2>College Event Login</h2>
+<input placeholder="Username">
+<input type="password" placeholder="Password">
+<button>Login</button>
+</div>
+
+</body>
+</html>

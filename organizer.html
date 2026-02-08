@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Organizer</title>
+<style>
+body{font-family:Arial;margin:0;background:#f4f6f9}
+
+header{
+background:#1e3a8a;
+color:white;
+padding:15px;
+}
+
+.container{
+padding:20px;
+animation:fadeIn 1s ease;
+}
+
+input{
+display:block;
+width:300px;
+padding:10px;
+margin:10px 0;
+border-radius:6px;
+border:1px solid #ccc;
+transition:0.3s;
+}
+
+input:focus{
+border-color:#2563eb;
+transform:scale(1.02);
+}
+
+button{
+padding:10px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#1e40af;
+transform:scale(1.1);
+}
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<header>Organizer Panel</header>
+
+<div class="container">
+<h3>Create Event</h3>
+<input placeholder="Event Name">
+<input placeholder="Date">
+<input placeholder="Venue">
+<button>Create</button>
+
+<h3>Participants</h3>
+<p>Total Registered: 45</p>
+<button>Mark Attendance</button>
+</div>
+
+</body>
+</html>

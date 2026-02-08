@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Events</title>
+<style>
+body{font-family:Arial;margin:0;background:#eef2f7}
+
+header{
+background:#1e3a8a;
+color:white;
+padding:15px;
+}
+
+.event{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+animation:fadeIn 1s ease;
+transition:0.3s;
+}
+
+.event:hover{
+transform:scale(1.02);
+background:#f0f9ff;
+}
+
+button{
+padding:10px 15px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#1e40af;
+transform:scale(1.1);
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateX(-30px)}
+to{opacity:1;transform:translateX(0)}
+}
+</style>
+</head>
+<body>
+
+<header>Upcoming Events</header>
+
+<div class="event">
+<h3>Tech Fest 2026</h3>
+<p>Date: 15 Feb</p>
+<button>Register</button>
+</div>
+
+<div class="event">
+<h3>Cultural Night</h3>
+<p>Date: 20 Feb</p>
+<button>Register</button>
+</div>
+
+</body>
+</html>

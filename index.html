@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Secure College Event Portal</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#1e3a8a,#2563eb,#0ea5e9,#1e40af);
+    background-size:400% 400%;
+    animation:bgMove 8s infinite alternate;
+    color:white;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%}
+100%{background-position:100% 50%}
+}
+
+.card{
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.15);
+padding:30px;
+border-radius:15px;
+width:320px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+select,input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:6px;
+}
+
+button{
+width:100%;
+padding:10px;
+border:none;
+border-radius:6px;
+background:white;
+color:#1e3a8a;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:#e0e7ff;
+}
+
+#error{
+color:#ffcccc;
+font-size:14px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Secure Login</h2>
+
+<select id="role">
+<option value="student">Student</option>
+<option value="organizer">Organizer</option>
+<option value="admin">Admin</option>
+</select>
+
+<input id="username" placeholder="Username / ID">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p id="error"></p>
+</div>
+
+<script>
+function login(){
+
+let role = document.getElementById("role").value;
+let user = document.getElementById("username").value;
+let pass = document.getElementById("password").value;
+
+if(role==="student" && user==="student" && pass==="1234"){
+location.href="dashboard.html";
+}
+else if(role==="organizer" && user==="org01" && pass==="5678"){
+location.href="organizer.html";
+}
+else if(role==="admin" && user==="admin" && pass==="9999"){
+location.href="admin.html";
+}
+else{
+document.getElementById("error").innerText="Invalid credentials!";
+}
+}
+</script>
+
+</body>
+</html>
